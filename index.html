@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yevhen · Computer science student, backend</title>
+  <meta name="description" content="I build applications that solve basic annoying tasks.">
+  <link rel="canonical" href="https://l2_myxa.github.io">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Yevhen · Computer science student, backend">
+  <meta property="og:description" content="I build applications that solve basic annoying tasks.">
+  <meta property="og:url" content="https://l2_myxa.github.io">
+  <meta property="og:site_name" content="Yevhen">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Yevhen · Computer science student, backend">
+  <meta name="twitter:description" content="I build applications that solve basic annoying tasks.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fbfaf7;
+      --surface: #ffffff;
+      --text: #1f2421;
+      --muted: #5c655f;
+      --line: #e4e2dc;
+      --accent: #2b6e5f;
+      --accent-ink: #ffffff;
+      --mark: #fff200;
+      --mark-ink: #1f2421;
+      --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #131715;
+        --surface: #1a1f1d;
+        --text: #e9ece9;
+        --muted: #a3ada7;
+        --line: #2b322f;
+        --accent: #6fc3ae;
+        --accent-ink: #0f1513;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      -webkit-text-size-adjust: 100%;
+    }
+    .wrap { max-width: 42rem; margin: 0 auto; padding: 0 1.25rem; }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, .button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    mark {
+      background: var(--mark);
+      color: var(--mark-ink);
+      padding: 0.05em 0.35em;
+      border-radius: 3px;
+    }
+
+    /* First screen */
+    header.hero { padding: 4.5rem 0 3rem; }
+    .eyebrow {
+      margin: 0 0 1rem;
+      font-size: 0.875rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(2.6rem, 9vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+    .one-liner {
+      margin: 0 0 1.75rem;
+      font-size: clamp(1.2rem, 3.6vw, 1.45rem);
+      line-height: 1.4;
+      max-width: 32rem;
+    }
+    .button {
+      display: inline-block;
+      padding: 0.85rem 1.4rem;
+      background: var(--accent);
+      color: var(--accent-ink);
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .button:hover { filter: brightness(1.08); }
+    .now {
+      margin: 2rem 0 0;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .now strong { color: var(--text); font-weight: 600; }
+
+    /* Sections */
+    section { padding: 2.5rem 0; border-top: 1px solid var(--line); }
+    h2 {
+      margin: 0 0 1.5rem;
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: 1.2;
+    }
+    h3 {
+      margin: 0 0 0.9rem;
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.25rem;
+      line-height: 1.3;
+    }
+
+    /* Featured */
+    .featured-list { display: grid; gap: 1.25rem; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.4rem 1.4rem 1.2rem;
+    }
+    .card dl { margin: 0; }
+    .card dt {
+      margin-top: 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .card dt:first-child { margin-top: 0; }
+    .card dd { margin: 0.15rem 0 0; }
+    .card .link { margin: 1rem 0 0; font-weight: 500; }
+
+    /* Work list */
+    .work { list-style: none; margin: 0; padding: 0; }
+    .work li {
+      display: grid;
+      grid-template-columns: 8rem 1fr;
+      gap: 0.25rem 1.25rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .work li:first-child { padding-top: 0; }
+    .work time { color: var(--muted); font-size: 0.95rem; }
+    @media (max-width: 30rem) {
+      .work li { grid-template-columns: 1fr; }
+    }
+
+    /* About + contact */
+    .about p { margin: 0; max-width: 36rem; }
+    .contact { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+    .contact span { display: inline-block; min-width: 5.5rem; color: var(--muted); }
+
+    footer { padding: 2rem 0 3.5rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+
+    <header class="hero">
+      <p class="eyebrow">Second-year computer science student</p>
+      <h1>Yevhen</h1>
+      <p class="one-liner">I build applications that solve basic annoying tasks.</p>
+      <a class="button" href="mailto:yevhenskorik@gmail.com?subject=Summer%20backend%20internship">Talk to me about a summer backend internship</a>
+      <p class="now"><strong>Now:</strong> <mark>[What are you working on this month?]</mark></p>
+    </header>
+
+    <section id="featured">
+      <h2>Featured</h2>
+      <div class="featured-list">
+
+        <article class="card">
+          <h3>Simple calculator</h3>
+          <dl>
+            <dt>Problem</dt>
+            <dd><mark>[What problem were you solving with this calculator?]</mark></dd>
+            <dt>Decision</dt>
+            <dd>I built it with plain HTML, CSS and JavaScript, using DOM manipulation to handle input and show results. <mark>[Why did you choose to build it this way?]</mark></dd>
+            <dt>Result</dt>
+            <dd><mark>[What was the result? Does it work, who used it, what did you learn?]</mark></dd>
+          </dl>
+          <!-- ADD LINK HERE when you have one: <p class="link"><a href="https://...">View the project</a></p> -->
+        </article>
+
+        <article class="card">
+          <h3>Resident assistant, Computer Science cohort</h3>
+          <dl>
+            <dt>Problem</dt>
+            <dd><mark>[What did the cohort need help with?]</mark></dd>
+            <dt>Decision</dt>
+            <dd><mark>[What did you decide to do here, and why?]</mark></dd>
+            <dt>Result</dt>
+            <dd><mark>[What changed because of your work?]</mark></dd>
+          </dl>
+          <!-- ADD LINK HERE when you have one: <p class="link"><a href="https://...">Read more</a></p> -->
+        </article>
+
+      </div>
+    </section>
+
+    <section id="work">
+      <h2>Work</h2>
+      <ul class="work">
+        <!-- ADD NEW WORK HERE: copy one item, paste it at the top, edit it -->
+        <li>
+          <time><mark>[Date]</mark></time>
+          <span>Took part in the Destination Imagination Olympiad, where teams solve practical problems with creative solutions.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>New problems and new experience pull me in, especially the kind I can solve to make a team’s product better. At the Destination Imagination Olympiad I practised finding creative answers to practical problems, and I bring that approach to code. I’m looking for a summer internship in backend development.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="contact">
+        <li><span>Email</span><a href="mailto:yevhenskorik@gmail.com">yevhenskorik@gmail.com</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/yevhen-skorik-650805333/" rel="me">linkedin.com/in/yevhen-skorik-650805333</a></li>
+        <li><span>GitHub</span><a href="https://github.com/L2_MYXA" rel="me">github.com/L2_MYXA</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">© Yevhen</div>
+  </footer>
+</body>
+</html>
